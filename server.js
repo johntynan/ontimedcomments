@@ -1,7 +1,8 @@
 (function() {
-  var app, express, stylus;
+  var app, express, nib, stylus;
   express = require('express');
   stylus = require('stylus');
+  nib = require('nib');
   app = module.exports = express.createServer();
   app.configure(function() {
     app.set('port', process.env.PORT || 3000);
@@ -10,12 +11,13 @@
     app.use(express.bodyParser());
     app.use(express.methodOverride());
     app.use(app.router);
-    app.use(express.static(__dirname + '/public'));
-    return app.use(require('connect-assets')({
-      buildFilenamer: function(filename) {
-        return filename;
+    app.use(stylus.middleware({
+      src: __dirname + '/public',
+      compile: function(str, path) {
+        return stylus(str).set('filename', path).set('compress', true).use(nib());
       }
     }));
+    return app.use(express.static(__dirname + '/public'));
   });
   app.configure('development', function() {
     return app.use(express.errorHandler({
@@ -27,9 +29,7 @@
     return app.use(express.errorHandler());
   });
   app.get('/', function(req, res) {
-    return res.render('index', {
-      title: 'Test'
-    });
+    return res.render('index');
   });
   app.listen(app.settings.port);
 }).call(this);

@@ -2,6 +2,7 @@
 
 express = require 'express'
 stylus  = require 'stylus'
+nib     = require 'nib'
 
 # Configure Express App
 
@@ -14,8 +15,11 @@ app.configure ->
   app.use express.bodyParser()
   app.use express.methodOverride()
   app.use app.router
+  app.use stylus.middleware
+    src: __dirname + '/public'
+    compile: (str, path) ->
+      stylus(str).set('filename', path).set('compress', true).use(nib())
   app.use express.static __dirname + '/public'
-  app.use require('connect-assets') buildFilenamer: (filename) -> filename
   
 app.configure 'development', () ->
   app.use express.errorHandler dumpExceptions: true, showStack: true
@@ -25,6 +29,7 @@ app.configure 'production', () ->
   
 # Declare Express Routing & Listen
   
-app.get '/', (req, res) -> res.render 'index', title: 'Test'
+app.get '/', (req, res) ->
+  res.render 'index'
   
 app.listen app.settings.port

@@ -1,12 +1,11 @@
 {
   "name": "node",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "dependencies": {
     "express": ">= 2.5.1",
     "coffee-script": "*",
-    "stylus": "0.15.1",
-    "nib": "0.2.0",
-    "jade": "0.14.2",
-    "connect-assets": "2.1.7"
+    "stylus": "*",
+    "nib": "*",
+    "jade": "*"
   }
 }
