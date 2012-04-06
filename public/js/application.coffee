@@ -28,16 +28,20 @@ $ ->
 							comment.html = data.html
 
 						$('#comments').prepend ich.comment(comment)
+						$('#comments').find('li:first').fadeIn('slow')
 
 			whileplaying: () ->
 				$('.played').width (@position / @duration * 100) + '%'
-			onfinish: () ->
-				$('.finished').show()
+			onplay: () ->
+				$('.play').text "Action!"
 
 			autoPlay: false
 			volume: 100
 
+		sound.onPosition 78000, () ->
+			$('.finished').fadeIn()
+
 		$('.play').click ->
-			$(@).fadeOut(1000)
+			$(@).text "Loading..."
 			sound.play()
 			false

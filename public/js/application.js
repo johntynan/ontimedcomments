@@ -33,7 +33,8 @@
                 comment.media = "rich";
                 comment.html = data.html;
               }
-              return $('#comments').prepend(ich.comment(comment));
+              $('#comments').prepend(ich.comment(comment));
+              return $('#comments').find('li:first').fadeIn('slow');
             }));
           }
           return _results;
@@ -41,14 +42,17 @@
         whileplaying: function() {
           return $('.played').width((this.position / this.duration * 100) + '%');
         },
-        onfinish: function() {
-          return $('.finished').show();
+        onplay: function() {
+          return $('.play').text("Action!");
         },
         autoPlay: false,
         volume: 100
       });
+      sound.onPosition(78000, function() {
+        return $('.finished').fadeIn();
+      });
       return $('.play').click(function() {
-        $(this).fadeOut(1000);
+        $(this).text("Loading...");
         sound.play();
         return false;
       });
