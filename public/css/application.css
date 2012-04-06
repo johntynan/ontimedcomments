@@ -1,4 +1,5 @@
 body{padding-bottom:75px}
+#header{z-index:100;}
 #header .played{background:#f60;height:5px;width:0}
 #container{margin:60px auto 0 auto;width:425px}
 .intro,.finished{margin:0 auto;width:425px}
