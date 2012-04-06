@@ -17,6 +17,6 @@ h2 a{border-bottom:1px solid #f60;}
 h2 a:hover{color:#333}
 h3{font:24px Interstate;text-transform:uppercase}
 #container{margin:100px auto;width:750px}
-#header,#footer{background:#333;height:5px;width:100%}
+#header,#footer{background:#333;height:5px;width:100%;z-index:100}
 #header{position:fixed;top:0;left:0}
 #footer{position:fixed;bottom:0;left:0}

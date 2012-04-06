@@ -1,7 +1,6 @@
 body{padding-bottom:75px}
 .play{background:-webkit-gradient(linear, left top, left bottom, color-stop(0, #fff), color-stop(1, #e5e5e5));background:-webkit-linear-gradient(top, #fff 0%, #e5e5e5 100%);background:-moz-linear-gradient(top, #fff 0%, #e5e5e5 100%);background:-o-linear-gradient(top, #fff 0%, #e5e5e5 100%);background:-ms-linear-gradient(top, #fff 0%, #e5e5e5 100%);background:linear-gradient(top, #fff 0%, #e5e5e5 100%);-webkit-border-radius:100px;-moz-border-radius:100px;border-radius:100px;border:1px solid #ccc;display:inline-block;font-size:16px;padding:5px 15px;text-shadow:0 1px 0 #fff;-webkit-transition:all .2s linear;-moz-transition:all .2s linear;-o-transition:all .2s linear;transition:all .2s linear;z-index:100;}
 .play:hover{border:1px solid #b0b0b0;-webkit-box-shadow:0 0 4px rgba(0,0,0,0.20);-moz-box-shadow:0 0 4px rgba(0,0,0,0.20);box-shadow:0 0 4px rgba(0,0,0,0.20);color:#333}
-#header{z-index:100;}
 #header .played{background:#f60;height:5px;width:0}
 #container{margin:60px auto 0 auto;width:425px}
 .intro,.finished{margin:0 auto;width:425px}
