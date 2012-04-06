@@ -1,5 +1,61 @@
 @import "nib"
 
-// http://visionmedia.github.com/nib/
+body
+	padding-bottom 75px
 
-global-reset()
+#header
+	.played
+		background #F60
+		height 5px
+		width 0
+
+#container
+	margin 50px auto 0 auto
+	width 425px
+
+.intro, .finished
+	margin 0 auto
+	width 425px
+
+.finished
+	display none
+	margin-bottom 40px
+
+ul#comments
+	li
+		border-bottom 1px solid #333
+		display block
+		margin 10px 0
+		position relative
+
+		span
+			font-size 11px
+			z-index 100
+
+		span.comment
+			absolute bottom 5px left 10px
+			overflow hidden
+			text-overflow ellipsis
+			white-space nowrap
+			width 200px
+		span.timecode
+			absolute bottom 5px right 10px
+		& > div
+			background whitesmoke
+			box-sizing border-box
+			margin 0 auto
+			width 425px
+			&.link
+				padding 10px
+			&.photo img
+				width 100%
+
+#footer
+	height 100px
+	background linear-gradient(top, rgba(white, 0), white)
+	border-bottom 5px solid #333
+
+.fb-like
+	absolute left 20px top 20px
+.tw-tweet
+	absolute left 110px top 20px

@@ -1,0 +1,68 @@
+@import "nib"
+
+accent = #F60
+dark = #333
+
+global-reset()
+
+body
+	color #999
+	font 13px Interstate Light, Interstate, Lucida Grande, Helvetica, Arial, sans-serif
+
+a
+	color dark
+	text-decoration none
+	&:hover
+		color accent
+
+strong
+	color accent
+
+p
+	margin 10px 0
+
+h1, h2, h3
+	color dark
+	margin-bottom 10px
+
+h1
+	background url(/images/icon.png) 0 4px no-repeat
+	border-bottom 3px solid accent
+	display inline-block
+	font 36px Interstate
+	padding-left 38px
+	position relative
+	text-transform uppercase
+	span
+		color #CCC
+		font-size 13px
+		position absolute
+		right -40px
+		top 7px
+
+h2
+	font-size 24px
+	padding-bottom 25px
+	a
+		border-bottom 1px solid accent
+		&:hover
+			color dark
+
+h3
+	font 24px Interstate
+	text-transform uppercase
+
+#container
+	margin 100px auto
+	width 750px
+
+#header, #footer
+	background dark
+	height 5px
+	width 100%
+
+#header
+	fixed top left
+
+#footer
+	fixed bottom left

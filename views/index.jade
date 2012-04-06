@@ -1,3 +1,33 @@
 body
-  p Lorem Ipsum
+
+  .fb-like(data-href='http://waveraid.com', data-send='false', data-layout='button_count', data-width=750, data-show-faces='false')
+  .tw-tweet: a.twitter-share-button(href='https://twitter.com/share', data-lang='en', data-hashtags='waveraid', data-related='soundcloud,leemartin,johanneswagener', data-url='http://waveraid.com') Tweet
+
+  #header
+    .played
+
+  #container
+    h1 OnTimedComments <span>Hack</span>
+    h2 <a href="http://soundcloud.com" target="_blank">SoundCloud</a> Timed Comments with <a href="http://embed.ly" target="_blank">Embed.ly</a> Media Resolving.
+
+  .finished
+    h3 Mind Blown?
+    p Good! Check out this <a href="https://gist.github.com/2315016" target="_blank">Gist</a>. It's all very simple:
+    p We initialize the SoundCloud <a href="http://developers.soundcloud.com/docs/javascript-sdk" target="_blank">JS SDK</a> and once streaming is ready, create our sound. As the track plays, we call the <code>ontimedcomments</code> event. Every time a comment comes in we ping the Embed.ly oEmbed <a href="http://embed.ly/docs/endpoints/1/oembed" target="_blank">API</a> and do something with the response. In our case, we display it here on the page.
+    p Kaboom. Now go out and build something rad!
   
+  ul#comments
+
+  .intro
+    p <iframe width="100%" height="166" scrolling="no" frameborder="no" src="http://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F42164989&show_artwork=false"></iframe>
+    h3 Wait! Don't play. Listen...
+    p Notice how the timed comments above are links to rich media? Wouldn't it be cool if you could write an app that displays those while playing the SoundCloud track?
+    p Well guess what? <strong>You can!</strong> I'll show you how using <a href="http://embed.ly" target="_blank">Embed.ly</a> and our Javascript SDK's new <a href="#" target="_blank">ontimedcomments</a> event.
+    p Ready? Click <a href='#' class='play'>here</a> to rock.
+
+  #footer
+
+  include ./comment.html
+
+  #fb-root  
+  script(type="text/javascript") (function(a,b,c){var d,e=a.getElementsByTagName(b)[0];if(a.getElementById(c))return;d=a.createElement(b);d.id=c;d.src="//connect.facebook.net/en_PI/all.js#xfbml=1&appId=250890958329704";e.parentNode.insertBefore(d,e)})(document,"script","facebook-jssdk");
