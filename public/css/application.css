@@ -11,5 +11,5 @@ ul#comments li > div{background:#f5f5f5;-webkit-box-sizing:border-box;-moz-box-s
 ul#comments li > div.link{padding:10px}
 ul#comments li > div.photo img{width:100%}
 #footer{height:100px;background:-webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(255,255,255,0.00)), color-stop(1, #fff));background:-webkit-linear-gradient(top, rgba(255,255,255,0.00) 0%, #fff 100%);background:-moz-linear-gradient(top, rgba(255,255,255,0.00) 0%, #fff 100%);background:-o-linear-gradient(top, rgba(255,255,255,0.00) 0%, #fff 100%);background:-ms-linear-gradient(top, rgba(255,255,255,0.00) 0%, #fff 100%);background:linear-gradient(top, rgba(255,255,255,0.00) 0%, #fff 100%);border-bottom:5px solid #333}
-.fb-like{position:absolute;left:20px;top:20px}
+.fb-like{position:absolute;left:20px;top:20px;position:absolute !important}
 .tw-tweet{position:absolute;left:110px;top:20px}
