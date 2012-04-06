@@ -48,6 +48,7 @@
         volume: 100
       });
       return $('.play').click(function() {
+        $(this).fadeOut(1000);
         sound.play();
         return false;
       });

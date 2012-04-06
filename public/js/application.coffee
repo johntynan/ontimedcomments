@@ -38,5 +38,6 @@ $ ->
 			volume: 100
 
 		$('.play').click ->
+			$(@).fadeOut(1000)
 			sound.play()
 			false
