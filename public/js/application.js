@@ -43,10 +43,7 @@
         whileplaying: function() {
           return $('.played').width((this.position / this.duration * 100) + '%');
         },
-        onplay: function() {
-          console.log("play");
-          return $('.play').text("Action!");
-        },
+        autoLoad: true,
         autoPlay: false,
         volume: 100
       });
@@ -54,7 +51,6 @@
         return $('.finished').fadeIn();
       });
       return $('.play').click(function() {
-        $(this).text("Loading...");
         sound.play();
         return false;
       });

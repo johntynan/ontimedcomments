@@ -30,9 +30,7 @@ $ ->
 
 			whileplaying: () ->
 				$('.played').width (@position / @duration * 100) + '%'
-			onplay: () ->
-				console.log "play"
-				$('.play').text "Action!"
+			autoLoad: true
 			autoPlay: false
 			volume: 100
 
@@ -40,6 +38,5 @@ $ ->
 			$('.finished').fadeIn()
 
 		$('.play').click ->
-			$(@).text "Loading..."
 			sound.play()
 			false
