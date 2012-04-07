@@ -34,8 +34,7 @@ $ ->
 			autoPlay: false
 			volume: 100
 
-		sound.onPosition 78000, () ->
-			$('.finished').fadeIn()
+		sound.onPosition 78000, () -> $('.finished').fadeIn()
 
 		$('.play').click ->
 			sound.play()
