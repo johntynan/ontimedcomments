@@ -1,11 +1,11 @@
 body
 
-  #header
+  header
     .played
 
   #container
     h1 OnTimedComments <span>Hack</span>
-    h2 <a href="http://soundcloud.com" target="_blank">SoundCloud</a> Timed Comments with <a href="http://embed.ly" target="_blank">Embed.ly</a> Media Resolving.
+    h2 SoundCloud Timed Comments with <a href="http://embed.ly" target="_blank">Embed.ly</a> Media Resolving.
 
   .finished
     h3 Mind Blown?
@@ -20,10 +20,9 @@ body
     h3 Wait! Don't play. Listen...
     p Notice how the timed comments above are links to rich media? Wouldn't it be cool if you could write an app that displays those while playing the SoundCloud track?
     p Well guess what? <strong>You can!</strong> I'll show you how using <a href="http://embed.ly" target="_blank">Embed.ly</a> and our Javascript SDK's new <a href="http://developers.soundcloud.com/docs/javascript-sdk#streaming" target="_blank">ontimedcomments</a> event. Ready? 
-    p
-      a.play(href='#') OK, click here to rock
+    p: a.button.play(href='#') OK, click here to rock
 
-  #footer
+  footer
 
   include ./comment.html
 

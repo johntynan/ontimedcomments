@@ -1,12 +1,13 @@
 @import "nib"
 
-accent = #F60
-dark = #333
+accent 	= #F60
+dark 		= #333
+text 		= #999
 
 global-reset()
 
 body
-	color #999
+	color text
 	font 13px Interstate Light, Interstate, Lucida Grande, Helvetica, Arial, sans-serif
 
 a
@@ -15,17 +16,15 @@ a
 	&:hover
 		color accent
 
-strong
-	color accent
-
 p
+	line-height 20px
 	margin 10px 0
 
 h1, h2, h3
 	color dark
 	margin-bottom 10px
 
-h1, h3
+strong, h1, h3
 	font-family Interstate, Lucida Grande, Helvetica, Arial, sans-serif
 
 h1
@@ -45,11 +44,12 @@ h1
 
 h2
 	font-size 24px
+	line-height 34px
 	padding-bottom 25px
 	a
 		border-bottom 1px solid accent
 		&:hover
-			color dark
+			color accent
 
 h3
 	font-size 24px
@@ -59,14 +59,32 @@ h3
 	margin 100px auto
 	width 750px
 
-#header, #footer
+header, footer
 	background dark
 	height 5px
 	width 100%
 	z-index 100
 
-#header
+header
 	fixed top left
 
-#footer
+footer
 	fixed bottom left
+
+.button
+	background linear-gradient(top, rgba(white, 0.8) 0%, rgba(245, 245, 245, 0.4) 50%, rgba(160, 160, 160, 0.1) 100%)
+	border-color rgba(black, .04) rgba(black, .08) rgba(black, .14)
+	border-style solid
+	border-width 1px
+	border-radius 4px
+	display inline-block
+	font 12px Lucida Grande, Arial, sans-serif
+	line-height 18px
+	padding 6px 12px
+	text-shadow 0 1px 0 white
+	transition all 0.2s linear
+	&:hover
+		background-color #f3f3f3
+		border-color rgba(black, .04) rgba(black, .13) rgba(black, .23)
+		box-shadow inset rgba(white, 0.199219) 0px -1px 0px 0px inset, rgba(black, 0.109375) 0px 0px 4px 0px
+		color dark
