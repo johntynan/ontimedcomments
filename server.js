@@ -29,7 +29,11 @@
     return app.use(express.errorHandler());
   });
   app.get('/', function(req, res) {
-    return res.render('index');
+    if ((req.headers.host !== 'ontimed.co') && (req.headers.host !== 'example.com:3000')) {
+      return res.redirect('http://ontimed.co');
+    } else {
+      return res.render('index');
+    }
   });
   app.listen(app.settings.port);
 }).call(this);

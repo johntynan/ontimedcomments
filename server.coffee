@@ -14,6 +14,7 @@ app.configure ->
   app.set 'view engine', 'jade'
   app.use express.bodyParser()
   app.use express.methodOverride()
+  
   app.use app.router
   app.use stylus.middleware
     src: __dirname + '/public'
@@ -30,6 +31,9 @@ app.configure 'production', () ->
 # Declare Express Routing & Listen
   
 app.get '/', (req, res) ->
-  res.render 'index'
+  if (req.headers.host != 'ontimed.co') and (req.headers.host != 'example.com:3000')
+    res.redirect 'http://ontimed.co'
+  else
+    res.render 'index'
   
 app.listen app.settings.port
