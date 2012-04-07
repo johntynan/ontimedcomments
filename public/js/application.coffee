@@ -20,7 +20,9 @@ $ ->
 								comment.html = "<img src='#{ data.url }' />"
 							when "link"
 								comment.html = "<a href='#{ data.url }' target='_blank'>#{ data.url }</a>"
-							when "video" or "rich"
+							when "video"
+								comment.html = data.html
+							when "rich"
 								comment.html = data.html
 
 						$('#comments').prepend ich.comment(comment)

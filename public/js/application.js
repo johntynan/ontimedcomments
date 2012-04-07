@@ -28,7 +28,10 @@
                 case "link":
                   comment.html = "<a href='" + data.url + "' target='_blank'>" + data.url + "</a>";
                   break;
-                case "video" || "rich":
+                case "video":
+                  comment.html = data.html;
+                  break;
+                case "rich":
                   comment.html = data.html;
               }
               $('#comments').prepend(ich.comment(comment));
