@@ -3,7 +3,7 @@ header .played{background:#f60;height:5px;width:0}
 #container{margin:60px auto 0 auto;width:425px}
 .intro h3{margin-top:20px}
 .intro,.finished{margin:0 auto;width:425px}
-.finished{display:none;margin-bottom:40px}
+.finished{margin-bottom:40px}
 ul#comments li{border-bottom:1px solid #333;display:none;margin:10px 0;position:relative;}
 ul#comments li span{font-size:11px;z-index:100}
 ul#comments li span.comment{position:absolute;bottom:5px;left:10px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;width:200px}
