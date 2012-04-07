@@ -10,12 +10,13 @@ a:hover{color:#f60}
 strong{color:#f60}
 p{margin:10px 0}
 h1,h2,h3{color:#333;margin-bottom:10px}
-h1{background:url("/images/icon.png") 0 4px no-repeat;border-bottom:3px solid #f60;display:inline-block;font:36px Interstate;padding-left:38px;position:relative;text-transform:uppercase;}
+h1,h3{font-family:Interstate,Lucida Grande,Helvetica,Arial,sans-serif}
+h1{background:url("/images/icon.png") 0 4px no-repeat;border-bottom:3px solid #f60;display:inline-block;font-size:36px;padding-left:38px;position:relative;text-transform:uppercase;}
 h1 span{color:#ccc;font-size:13px;position:absolute;right:-40px;top:7px}
 h2{font-size:24px;padding-bottom:25px;}
 h2 a{border-bottom:1px solid #f60;}
 h2 a:hover{color:#333}
-h3{font:24px Interstate;text-transform:uppercase}
+h3{font-size:24px;text-transform:uppercase}
 #container{margin:100px auto;width:750px}
 #header,#footer{background:#333;height:5px;width:100%;z-index:100}
 #header{position:fixed;top:0;left:0}

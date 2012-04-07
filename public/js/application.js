@@ -20,18 +20,16 @@
               autoplay: true,
               maxwidth: 425
             }, function(data) {
-              if (data.type === "photo") {
-                comment.media = "photo";
-                comment.html = "<img src='" + data.url + "' />";
-              } else if (data.type === "link") {
-                comment.media = "link";
-                comment.html = "<a href='" + data.url + "' target='_blank'>" + data.url + "</a>";
-              } else if (data.type === "video") {
-                comment.media = "video";
-                comment.html = data.html;
-              } else if (data.type === "rich") {
-                comment.media = "rich";
-                comment.html = data.html;
+              comment.media = data.type;
+              switch (data.type) {
+                case "photo":
+                  comment.html = "<img src='" + data.url + "' />";
+                  break;
+                case "link":
+                  comment.html = "<a href='" + data.url + "' target='_blank'>" + data.url + "</a>";
+                  break;
+                case "video" || "rich":
+                  comment.html = data.html;
               }
               $('#comments').prepend(ich.comment(comment));
               return $('#comments').find('li:first').fadeIn('slow');
@@ -43,6 +41,7 @@
           return $('.played').width((this.position / this.duration * 100) + '%');
         },
         onplay: function() {
+          console.log("play");
           return $('.play').text("Action!");
         },
         autoPlay: false,

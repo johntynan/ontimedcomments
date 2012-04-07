@@ -9,23 +9,19 @@ $ ->
 		sound = SC.stream 42164989,
 			ontimedcomments: (comments) ->
 				for comment in comments
-
 					comment.timestamp = SC.Helper.millisecondsToHMS(comment.timestamp)
 
 					$.getJSON "http://api.embed.ly/1/oembed?callback=?", key: EMBEDLY_KEY, url: comment.body, autoplay: true, maxwidth: 425, (data) ->
 
-						if data.type == "photo"
-							comment.media = "photo"
-							comment.html = "<img src='#{ data.url }' />"
-						else if data.type == "link"
-							comment.media = "link"
-							comment.html = "<a href='#{ data.url }' target='_blank'>#{ data.url }</a>"
-						else if data.type == "video"
-							comment.media = "video"
-							comment.html = data.html
-						else if data.type == "rich"
-							comment.media = "rich"
-							comment.html = data.html
+						comment.media = data.type
+
+						switch data.type
+							when "photo"
+								comment.html = "<img src='#{ data.url }' />"
+							when "link"
+								comment.html = "<a href='#{ data.url }' target='_blank'>#{ data.url }</a>"
+							when "video" or "rich"
+								comment.html = data.html
 
 						$('#comments').prepend ich.comment(comment)
 						$('#comments').find('li:first').fadeIn('slow')
@@ -33,8 +29,8 @@ $ ->
 			whileplaying: () ->
 				$('.played').width (@position / @duration * 100) + '%'
 			onplay: () ->
+				console.log "play"
 				$('.play').text "Action!"
-
 			autoPlay: false
 			volume: 100
 
